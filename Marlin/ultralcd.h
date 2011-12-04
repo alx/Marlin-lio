@@ -15,8 +15,14 @@
   #define STATUSTIMEOUT 15000
 
 
-  #include <LiquidCrystal.h>
-  extern LiquidCrystal lcd;
+  #ifdef DEULIGNE_LCD
+    #include "Wire.h"
+    #include <Deuligne.h>
+    extern Deuligne lcd;
+  #else
+    #include <LiquidCrystal.h>
+    extern LiquidCrystal lcd;
+  #endif
 
 
   #ifdef NEWPANEL
